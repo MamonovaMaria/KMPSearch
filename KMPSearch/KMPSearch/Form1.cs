@@ -49,7 +49,10 @@ namespace KMPSearch
             int result = KMPSearchFunction(textBoxForText.Text, textBoxForSearch.Text);
             label2.Enabled = true;
             textBoxForResult.Enabled = true;
-            textBoxForResult.Text = result.ToString();
+            if (result == -1)
+                textBoxForResult.Text = "Подстрока не найдена или введена некорректно";
+            else
+                textBoxForResult.Text = result.ToString();
         }
 
 
